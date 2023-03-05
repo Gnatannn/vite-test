@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
   Container,
   Box,
@@ -12,29 +12,38 @@ import {
   BtnText,
   FollowButton,
   FollowButtonActive,
-} from './UserCard.styled';
+} from "./UserCard.styled";
 
-import goitlogo from '../../images/goitlogo.svg';
-import mainimg from '../../images/mainimg.svg';
-import avatar from '../../images/hansel.png';
+import goitlogo from "../../images/goitlogo.svg";
+import mainimg from "../../images/mainimg.svg";
+import avatar from "../../images/hansel.png";
 
 export const UserCard = () => {
-  const [users, setUsers] = useState(() => {
-    return JSON.parse(localStorage.getItem('users')) || [];
+  const [followers, setFollowers] = useState(() => {
+    return JSON.parse(localStorage.getItem("followers")) || 100500;
   });
 
-  // const [isFollowing, setIsfollowing] = useState(false);
   const [isFollowing, setIsfollowing] = useState(() => {
-    return JSON.parse(localStorage.getItem('isFollowing')) || false;
+    return JSON.parse(localStorage.getItem("isFollowing")) || false;
   });
 
   useEffect(() => {
-    localStorage.setItem('isFollowing', JSON.stringify(isFollowing));
-  }, [isFollowing]);
+    localStorage.setItem("isFollowing", JSON.stringify(isFollowing));
+    localStorage.setItem("followers", JSON.stringify(followers));
+  }, [isFollowing, followers]);
 
   const handleClick = () => {
     setIsfollowing(!isFollowing);
+    if (!isFollowing) {
+      setFollowers(100501);
+    } else {
+      setFollowers(100500);
+    }
   };
+
+  const normilizedFollowers = followers
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
     <Container>
@@ -45,16 +54,9 @@ export const UserCard = () => {
           </LogoWrap>
           <MainImg src={mainimg}></MainImg>
         </HeadWrap>
-        {/* <AvatarWrap> */}
         <Avatar src={avatar}></Avatar>
-        {/* </AvatarWrap> */}
         <Text>777 tweets</Text>
-        {/* <Text>100,500 Followers</Text> */}
-        {!isFollowing ? (
-          <Text>100,500 Followers</Text>
-        ) : (
-          <Text>100,501 Followers</Text>
-        )}
+        <Text>{normilizedFollowers}</Text>
         {!isFollowing ? (
           <FollowButton onClick={handleClick} type="button">
             Follow
