@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import users from "../../data/users.json";
 import {
   Container,
   Box,
@@ -12,10 +13,10 @@ import {
   BtnText,
   FollowButton,
   FollowButtonActive,
+  Background,
 } from "./UserCard.styled";
 
 import goitlogo from "../../images/goitlogo.svg";
-import mainimg from "../../images/mainimg.svg";
 import avatar from "../../images/hansel.png";
 
 export const UserCard = () => {
@@ -35,9 +36,9 @@ export const UserCard = () => {
   const handleClick = () => {
     setIsfollowing(!isFollowing);
     if (!isFollowing) {
-      setFollowers(100501);
+      setFollowers(followers + 1);
     } else {
-      setFollowers(100500);
+      setFollowers(followers - 1);
     }
   };
 
@@ -50,13 +51,13 @@ export const UserCard = () => {
       <Box>
         <HeadWrap>
           <LogoWrap>
-            <Logo src={goitlogo}></Logo>
+            <Logo src={goitlogo} alt="Logo GOIT"></Logo>
           </LogoWrap>
-          <MainImg src={mainimg}></MainImg>
+          <Background></Background>
         </HeadWrap>
-        <Avatar src={avatar}></Avatar>
+        <Avatar src={avatar} alt="User avatar"></Avatar>
         <Text>777 tweets</Text>
-        <Text>{normilizedFollowers}</Text>
+        <Text>{normilizedFollowers} Followers</Text>
         {!isFollowing ? (
           <FollowButton onClick={handleClick} type="button">
             Follow

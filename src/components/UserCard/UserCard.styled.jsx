@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bgimg from "../../images/bg-img.png";
 
 export const Container = styled.div`
   margin: auto;
@@ -10,6 +11,7 @@ export const Container = styled.div`
 export const Box = styled.div`
   width: 380px;
   height: 460px;
+
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -19,6 +21,12 @@ export const Box = styled.div`
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 20px;
   text-align: center;
+
+  &:hover {
+    box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+  }
 `;
 
 export const HeadWrap = styled.div`
@@ -37,6 +45,7 @@ export const LogoWrap = styled.div`
 export const MainImg = styled.img`
   width: 308px;
   height: 168px;
+  margin: auto;
 `;
 
 export const Avatar = styled.img`
@@ -48,12 +57,14 @@ export const Avatar = styled.img`
   /* box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
     inset 0px -2.19582px 4.39163px #ae7be3,
     inset 0px 4.39163px 3.29372px #fbf8ff; */
+
   position: absolute;
-  top: 245px;
+  top: 240px;
   left: 300px;
   z-index: 99;
   left: 0;
   right: 0;
+
   margin-left: auto;
   margin-right: auto;
   background: linear-gradient(
@@ -67,13 +78,14 @@ export const Avatar = styled.img`
 export const AvatarWrap = styled.div``;
 
 export const Text = styled.p`
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   text-transform: uppercase;
   color: #ebd8ff;
+  margin-bottom: 16px;
 `;
 
 export const FollowButton = styled.button`
@@ -89,13 +101,17 @@ export const FollowButton = styled.button`
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
 
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
+  :hover,
+  :focus {
+    box-shadow: 0px 3.44px 3.44px rgba(0, 0, 0, 0.25), 0 0 3px 3px gold;
+  }
 `;
 
 export const BtnText = styled.p``;
@@ -113,11 +129,24 @@ export const FollowButtonActive = styled.button`
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
 
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
+  :hover,
+  :focus {
+    box-shadow: 0px 3.44px 3.44px rgba(0, 0, 0, 0.25), 0 0 3px 3px gold;
+  }
+`;
+
+export const Background = styled.div`
+  width: 308px;
+  height: 168px;
+  margin: auto;
+
+  background-image: url(${bgimg});
+  background-repeat: no-repeat;
 `;

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "user": "Glenda Hicks",
+    "avatarURL": "https://res.cloudinary.com/dkvimwpoo/image/upload/v1677974669/Tweet-card-avatars/Glenda-Hicks-avatar_om8ntb.png",
+    "tweets": 777,
+    "followers": 1153
+  },
+  {
+    "id": 2,
+    "user": "Julie Williams",
+    "avatarURL": "https://res.cloudinary.com/dkvimwpoo/image/upload/v1677974669/Tweet-card-avatars/Julie-Williams-avatar_v6umaj.png",
+    "tweets": 101,
+    "followers": 551
+  },
+  {
+    "id": 3,
+    "user": "Earl Barber",
+    "avatarURL": "https://res.cloudinary.com/dkvimwpoo/image/upload/v1677974669/Tweet-card-avatars/Earl-Barber-avatar_n1kajp.png",
+    "tweets": 901,
+    "followers": 50000
+  }
+]
